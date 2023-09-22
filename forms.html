@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>HTML Forms</title>
+        <style>
+            * {
+  box-sizing: border-box;
+}
+        /* Style for the table */
+        table {
+            border-collapse: collapse;
+            width:100%;
+            margin: 20px auto;
+        }
+
+        th, td {
+            border: 1px solid rgb(55, 53, 53);
+            padding: 8px;
+            text-align: left;
+        }
+        tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+  background-color: #04AA6D;
+  color: white;
+}
+input[type=text] {
+  width: 80%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+input[type=number] {
+  width: 80%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+#submitButton {
+  background-color: rgb(37, 37, 150);
+  color: white;
+  padding: 14px 22px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+#submitButton:hover {
+  background-color: #8394d7;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 40px;
+}
+
+.col-25 {
+  float: left;
+  width: 20%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 8px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+</style>
+    </head>
+    <body>
+        <div class="container">
+            <h1 id="title"></h1>
+            <p id="description"></p>                  
+
+            <form id="myForm">
+                <div class="row">
+                    <div class="col-25">
+                        <label for="name">First Name</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="name" name="name"
+                            placeholder="Your name.." required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="lname">Last Name</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="lname" name="lname"
+                            placeholder="Last name.." required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="address">Address</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="address" name="address"
+                            placeholder="Address" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="pincode">Pincode</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="number" id="pincode" name="pincode"
+                            placeholder="Pincode" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="gender">Gender</label>
+                    </div>
+                    <div class="col-30">
+                        <br>
+                        <input type="radio" id="male" name="gender"
+                            value="Male"> Male
+                        <input type="radio" id="female" name="gender"
+                            value="Female"> Female
+                        <br>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="food">Choice of Food (Select at least 2)
+                        </label>
+                    </div>
+                    <div class="col-75">
+
+                        <input type="checkbox" id="idli" name="food"
+                            value="Idli"> Idli
+                        <br>
+                        <input type="checkbox" id="Poori" name="food"
+                            value="Poori"> Poori
+                        <br>
+                        <input type="checkbox" id="briyani" name="food"
+                            value="Briyani"> Briyani
+                        <br>
+                        <input type="checkbox" id="sushi" name="food"
+                            value="Sushi"> Sushi
+                        <br>
+                        <input type="checkbox" id="salad" name="food"
+                            value="Salad"> Salad
+                        <br>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="state">State</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" id="state" name="state"
+                                placeholder="State" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="country">Country</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" id="country" name="country"
+                                placeholder="Country" required>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <button id="submitButton">Submit</button>
+                    </div>
+                </form>
+            </div>
+
+            <table id="dataTable">
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Address</th>
+                    <th>Pincode</th>
+                    <th>Gender</th>
+                    <th>Choice of Food</th>
+                    <th>State</th>
+                    <th>Country</th>
+                </tr>
+            </table>
+
+            <script src="./Script.js">       
+    </script>
+        </body>
+    </html>
